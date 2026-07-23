@@ -1,0 +1,17 @@
+node_modules/
+out/
+dist/
+*.log
+.DS_Store
+
+# Bundled binaries are downloaded by scripts/download-binaries.mjs,
+# never committed.
+resources/windows/*.exe
+resources/macos/caddy
+resources/macos/mkcert
+resources/linux/caddy
+resources/linux/mkcert
+
+# Never commit certificates or keys.
+*.pem
+*.key

@@ -1,0 +1,58 @@
+{
+  "$comment": "Pinned binary versions and integrity hashes of the RAW downloaded artifact (zip, tar.gz, or exe). caddy zips/tarballs verified against the official caddy_2.10.0_checksums.txt (SHA-512) on 2026-07-22/23; sha256 values below computed from the verified artifacts. Re-verify when bumping versions: run `npm run download-binaries -- --print-hash` and compare against the official release checksums before pinning.",
+  "caddy": {
+    "version": "2.10.0",
+    "platforms": {
+      "windows-x64": {
+        "url": "https://github.com/caddyserver/caddy/releases/download/v2.10.0/caddy_2.10.0_windows_amd64.zip",
+        "archive": "zip",
+        "archiveEntry": "caddy.exe",
+        "targetDir": "resources/windows",
+        "targetFile": "caddy.exe",
+        "sha256": "aeb20676f18e1373586fc781c578e270e1429f71f6f0e0b72d85d55e0efca480"
+      },
+      "macos-x64": {
+        "url": "https://github.com/caddyserver/caddy/releases/download/v2.10.0/caddy_2.10.0_mac_amd64.tar.gz",
+        "archive": "tar.gz",
+        "archiveEntry": "caddy",
+        "targetDir": "resources/macos",
+        "targetFile": "caddy",
+        "sha256": "31fda33df3ff403a4db7a4f6051330f4dcfb3d3a24bd5224ab486cd3d5d95f89"
+      },
+      "macos-arm64": {
+        "url": "https://github.com/caddyserver/caddy/releases/download/v2.10.0/caddy_2.10.0_mac_arm64.tar.gz",
+        "archive": "tar.gz",
+        "archiveEntry": "caddy",
+        "targetDir": "resources/macos",
+        "targetFile": "caddy",
+        "sha256": "6bebb79701acce70daa075d4be5dfde825b8f58068242807920364efdfc45dfe"
+      }
+    }
+  },
+  "mkcert": {
+    "version": "1.4.4",
+    "platforms": {
+      "windows-x64": {
+        "url": "https://github.com/FiloSottile/mkcert/releases/download/v1.4.4/mkcert-v1.4.4-windows-amd64.exe",
+        "archive": null,
+        "targetDir": "resources/windows",
+        "targetFile": "mkcert.exe",
+        "sha256": "d2660b50a9ed59eada480750561c96abc2ed4c9a38c6a24d93e30e0977631398"
+      },
+      "macos-x64": {
+        "url": "https://github.com/FiloSottile/mkcert/releases/download/v1.4.4/mkcert-v1.4.4-darwin-amd64",
+        "archive": null,
+        "targetDir": "resources/macos",
+        "targetFile": "mkcert",
+        "sha256": "a32dfab51f1845d51e810db8e47dcf0e6b51ae3422426514bf5a2b8302e97d4e"
+      },
+      "macos-arm64": {
+        "url": "https://github.com/FiloSottile/mkcert/releases/download/v1.4.4/mkcert-v1.4.4-darwin-arm64",
+        "archive": null,
+        "targetDir": "resources/macos",
+        "targetFile": "mkcert",
+        "sha256": "c8af0df44bce04359794dad8ea28d750437411d632748049d08644ffb66a60c6"
+      }
+    }
+  }
+}

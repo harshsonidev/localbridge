@@ -1,0 +1,60 @@
+appId: com.localbridge.app
+productName: LocalBridge
+copyright: Copyright (c) 2026 LocalBridge
+
+directories:
+  output: dist
+  buildResources: assets
+
+files:
+  - out/**
+  - package.json
+
+asar: true
+
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+  icon: assets/icon.ico
+  extraResources:
+    - from: resources/windows
+      to: binaries
+      filter: ['**/*']
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: always
+  createStartMenuShortcut: true
+  deleteAppDataOnUninstall: false
+
+mac:
+  category: public.app-category.developer-tools
+  icon: assets/icon.png
+  target:
+    - target: dmg
+      arch: [x64, arm64]
+  # The bundled Caddy/mkcert are not Apple-notarized, so disable the
+  # hardened runtime's library-validation for them. Ad-hoc signing is
+  # applied automatically; provide signing identity + notarization creds
+  # in CI for public distribution.
+  hardenedRuntime: false
+  gatekeeperAssess: false
+  extraResources:
+    - from: resources/macos
+      to: binaries
+      filter: ['**/*']
+
+dmg:
+  writeUpdateInfo: false
+
+linux:
+  target: [AppImage]
+  extraResources:
+    - from: resources/linux
+      to: binaries
+      filter: ['**/*']
+
+publish: null

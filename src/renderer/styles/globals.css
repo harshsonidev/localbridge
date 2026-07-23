@@ -1,0 +1,80 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Neutral, desaturated dark palette. */
+  --color-background: #0e1116;
+  --color-foreground: #d7dbe2;
+  --color-card: #11151c;
+  --color-card-foreground: #d7dbe2;
+  --color-popover: #151a22;
+  --color-popover-foreground: #d7dbe2;
+  --color-muted: #1a202b;
+  --color-muted-foreground: #8b93a3;
+  --color-border: #222936;
+  --color-input: #141922;
+  --color-primary: #4c7ef3;
+  --color-primary-foreground: #ffffff;
+  --color-destructive: #e5534b;
+  --color-destructive-foreground: #ffffff;
+  --color-success: #46a758;
+  --color-warning: #c9a227;
+  --color-accent: #1a212c;
+  --color-accent-foreground: #d7dbe2;
+  --color-ring: #3b62c4;
+
+  --font-sans:
+    'Segoe UI Variable Text', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Cascadia Code', 'Consolas', ui-monospace, monospace;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-background text-foreground font-sans antialiased text-[13px] leading-normal;
+  font-feature-settings: 'cv02', 'ss01';
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+::selection {
+  background: rgba(76, 126, 243, 0.28);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #262e3c;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #303a4b;
+}
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Shared table idiom used across pages. */
+.data-table {
+  @apply w-full text-[12.5px];
+}
+.data-table thead th {
+  @apply border-b border-border px-3 py-2 text-left text-[10.5px] font-medium uppercase tracking-[0.08em] text-muted-foreground/80;
+}
+.data-table tbody td {
+  @apply border-b border-border/50 px-3 py-2 align-middle;
+}
+.data-table tbody tr:last-child td {
+  @apply border-b-0;
+}
+.data-table tbody tr {
+  @apply transition-colors hover:bg-accent/40;
+}

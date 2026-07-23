@@ -1,0 +1,3 @@
+# Bundled macOS binaries (caddy, mkcert) are downloaded here by
+# `npm run download-binaries` on a Mac before `npm run package:mac`.
+# The binaries themselves are gitignored.
